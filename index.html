@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe - PhD Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 5px 15px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            padding: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .research-item, .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-item:hover, .education-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .links-list {
+            list-style: none;
+        }
+
+        .links-list li {
+            margin: 15px 0;
+        }
+
+        .links-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .links-list a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .links-list a:before {
+            content: '→';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info strong {
+            color: #667eea;
+            min-width: 80px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            border-top: 2px solid #e9ecef;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jane Doe</h1>
+            <p>PhD Researcher | Evolutionary Biology | Cave Fish Evolution</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#education" class="nav-link">Education & Experience</a></li>
+                <li><a href="#pictures" class="nav-link">Pictures</a></li>
+                <li><a href="#links" class="nav-link">Links</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <div class="profile-section">
+                    <div class="profile-image">JD</div>
+                    <div>
+                        <h2>Welcome</h2>
+                        <p>I am a PhD researcher in Evolutionary Biology at University Name, specializing in the evolution and adaptation of <em>Astyanax mexicanus</em> (Mexican cavefish). My research focuses on understanding the genetic and developmental mechanisms underlying trait evolution in cave-adapted populations, including eye degeneration, pigmentation loss, and enhanced sensory systems.</p>
+                        
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> jane.doe@university.edu</p>
+                            <p><strong>Office:</strong> Room 312, Biology Building</p>
+                            <p><strong>Lab:</strong> Cave Biology Research Laboratory</p>
+                            <p><strong>ORCID:</strong> 0000-0000-0000-0000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div id="about" class="page">
+                <h2>About Me</h2>
+                <p>I am a passionate evolutionary biologist dedicated to understanding the mechanisms of adaptation and evolution in extreme environments. My primary research organism is <em>Astyanax mexicanus</em>, a remarkable species that exists as both surface-dwelling and cave-adapted populations, providing a unique natural experiment in evolution.</p>
+                
+                <h3>Research Interests</h3>
+                <ul>
+                    <li>Cave adaptation and regressive evolution</li>
+                    <li>Developmental biology of eye and pigmentation loss</li>
+                    <li>Sensory system evolution and enhancement</li>
+                    <li>Behavioral evolution in cave environments</li>
+                    <li>Population genetics and phylogeography of cavefish</li>
+                    <li>Metabolic adaptations to nutrient-poor environments</li>
+                    <li>Circadian rhythm evolution in perpetual darkness</li>
+                </ul>
+                
+                <h3>Academic Background</h3>
+                <p>I completed my Bachelor's degree in Biology at State University (2018) with a focus on molecular biology and genetics. My Master's degree in Evolutionary Biology at Research University (2020) examined morphological variation in <em>Astyanax</em> populations. Currently, I am pursuing my PhD under the supervision of Prof. Distinguished Biologist, investigating the genetic basis of convergent evolution in multiple cave populations of <em>Astyanax mexicanus</em>.</p>
+                
+                <h3>Teaching</h3>
+                <p>I am passionate about teaching evolution and have served as a teaching assistant for several courses including:</p>
+                <ul>
+                    <li>Evolutionary Biology (Fall 2023)</li>
+                    <li>Genetics Laboratory (Spring 2023)</li>
+                    <li>Introduction to Biology (Fall 2022)</li>
+                    <li>Comparative Vertebrate Anatomy (Spring 2022)</li>
+                </ul>
+                
+                <h3>Field Work</h3>
+                <p>Regular field expeditions to cave systems in Northeast Mexico, including:</p>
+                <ul>
+                    <li>Cueva de El Pachón, Tamaulipas</li>
+                    <li>Cueva Chica, San Luis Potosí</li>
+                    <li>Cueva de Los Sabinos, San Luis Potosí</li>
+                    <li>Sistema de la Tinaja, San Luis Potosí</li>
+                </ul>
+            </div>
+
+            <!-- Research Page -->
+            <div id="research" class="page">
+                <h2>Research</h2>
+                
+                <h3>Current Projects</h3>
+                <div class="research-item">
+                    <h4>Convergent Evolution in Multiple Cave Populations of <em>Astyanax mexicanus</em></h4>
+                    <p>Investigating the genetic basis of repeated trait loss across independently evolved cave populations. Using whole-genome sequencing and QTL mapping to identify whether the same genes underlie convergent phenotypes in different caves.</p>
+                    <p><strong>Funding:</strong> National Science Foundation DEB Grant #123456</p>
+                    <p><strong>Collaborators:</strong> Cave Biology Consortium, UNAM Mexico</p>
+                </div>
+                
+                <div class="research-item">
+                    <h4>Sensory System Compensation in Blind Cavefish</h4>
+                    <p>Examining how enhanced lateral line system and taste buds compensate for vision loss. Using behavioral assays, neuroanatomy, and transcriptomics to understand sensory system trade-offs.</p>
+                    <p><strong>Status:</strong> Manuscript in preparation for <em>Current Biology</em></p>
+                </div>
+                
+                <div class="research-item">
+                    <h4>Metabolic Adaptations to Nutrient-Poor Cave Environments</h4>
+                    <p>Studying how cavefish have evolved altered metabolism, including increased fat storage and starvation resistance. Comparing metabolic rates and gene expression between surface and cave populations.</p>
+                    <p><strong>Funding:</strong> NIH R01 Grant (Co-Investigator)</p>
+                </div>
+                
+                <h3>Publications</h3>
+                <div class="research-item">
+                    <h4>2024</h4>
+                    <p><strong>Doe, J.</strong>, Smith, A., Johnson, B. (2024). "Parallel evolution of eye loss in <em>Astyanax mexicanus</em>: Evidence for regulatory gene convergence." <em>Evolution</em>, 78(5), 892-907.</p>
+                    <p>Garcia, M., <strong>Doe, J.</strong>, Biologist, D. (2024). "Enhanced chemoreception compensates for vision loss in cave-adapted fish." <em>Proceedings of the Royal Society B</em>, 291, 20240156.</p>
+                </div>
+                
+                <div class="research-item">
+                    <h4>2023</h4>
+                    <p><strong>Doe, J.</strong>, Scholar, E. (2023). "Population genomics reveals multiple invasions of cave habitats by <em>Astyanax mexicanus</em>." <em>Molecular Ecology</em>, 32(14), 3821-3836.</p>
+                    <p>Johnson, B., <strong>Doe, J.</strong>, et al. (2023). "Circadian rhythm degradation in perpetual darkness: Molecular mechanisms in cavefish." <em>Journal of Experimental Biology</em>, 226(8), jeb245158.</p>
+                </div>
+                
+                <div class="research-item">
+                    <h4>2022</h4>
+                    <p><strong>Doe, J.</strong>, et al. (2022). "Developmental timing of eye degeneration in <em>Astyanax</em> cavefish." <em>Developmental Biology</em>, 485, 67-79.</p>
+                    <p>Rodriguez, S., <strong>Doe, J.</strong>, Biologist, D. (2022). "Behavioral adaptations to cave life: A comparative study of six <em>Astyanax</em> populations." <em>Behavioral Ecology</em>, 33(4), 812-825.</p>
+                </div>
+                
+                <h3>Conference Presentations</h3>
+                <div class="research-item">
+                    <p>• <strong>Doe, J.</strong> (2024). "Genomic basis of convergent evolution in cavefish." Oral presentation, Evolution Conference, Montreal, Canada.</p>
+                    <p>• <strong>Doe, J.</strong> (2023). "Sensory system trade-offs in blind cavefish." Poster, Society for Integrative and Comparative Biology, Austin, TX.</p>
+                    <p>• <strong>Doe, J.</strong> (2023). "Metabolic evolution in nutrient-poor environments." Invited talk, International Astyanax Meeting, San Luis Potosí, Mexico.</p>
+                </div>
+            </div>
+
+            <!-- Education & Experience Page -->
+            <div id="education" class="page">
+                <h2>Education & Experience</h2>
+                
+                <h3>Education</h3>
+                <div class="education-item">
+                    <h4>PhD in Computer Science</h4>
+                    <p><strong>University Name</strong> | 2021 - Present</p>
+                    <p>Advisor: Prof. Distinguished Scholar</p>
+                    <p>Thesis: "Interpretable Deep Learning Models for Healthcare Applications"</p>
+                    <p>GPA: 4.0/4.0</p>
+                </div>
+                
+                <div class="education-item">
+                    <h4>M.S. in Artificial Intelligence</h4>
+                    <p><strong>Research Institute</strong> | 2019 - 2020</p>
+                    <p>Thesis: "Efficient Attention Mechanisms for Vision Transformers"</p>
+                    <p>GPA: 3.95/4.0</p>
+                </div>
+                
+                <div class="education-item">
+                    <h4>B.S. in Computer Science</h4>
+                    <p><strong>Tech University</strong> | 2015 - 2018</p>
+                    <p>Summa Cum Laude, Phi Beta Kappa</p>
+                    <p>GPA: 3.92/4.0</p>
+                </div>
+                
+                <h3>Professional Experience</h3>
+                <div class="education-item">
+                    <h4>Research Intern</h4>
+                    <p><strong>Big Tech AI Research Lab</strong> | Summer 2023</p>
+                    <p>Worked on large-scale vision-language models for multimodal understanding. Developed novel training strategies that improved model performance by 15% on benchmark datasets.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h4>Machine Learning Engineer Intern</h4>
+                    <p><strong>Healthcare Startup Inc.</strong> | Summer 2022</p>
+                    <p>Implemented deep learning pipelines for medical image analysis. Deployed models serving 10,000+ daily predictions with 99.9% uptime.</p>
+                </div>
+                
+                <h3>Awards & Honors</h3>
+                <div class="education-item">
+                    <ul>
+                        <li>Best Paper Award, Medical Imaging Conference 2024</li>
+                        <li>Google PhD Fellowship in Machine Learning, 2023</li>
+                        <li>Outstanding Graduate Student Award, 2023</li>
+                        <li>Dean's List, All Semesters (Undergraduate)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pictures Page -->
+            <div id="pictures" class="page">
+                <h2>Pictures</h2>
+                <p>A collection of photos from conferences, research activities, and academic events.</p>
+                
+                <div class="gallery">
+                    <div class="gallery-item">Conference 2024</div>
+                    <div class="gallery-item">Lab Group</div>
+                    <div class="gallery-item">Poster Session</div>
+                    <div class="gallery-item">Award Ceremony</div>
+                    <div class="gallery-item">Research Team</div>
+                    <div class="gallery-item">Campus View</div>
+                    <div class="gallery-item">Workshop 2023</div>
+                    <div class="gallery-item">Graduation</div>
+                </div>
+                
+                <p style="margin-top: 30px; text-align: center; color: #666;">
+                    <em>Click on any image to view in full size (placeholder images - replace with actual photos)</em>
+                </p>
+            </div>
+
+            <!-- Links Page -->
+            <div id="links" class="page">
+                <h2>Links</h2>
+                
+                <h3>Academic Profiles</h3>
+                <ul class="links-list">
+                    <li><a href="https://scholar.google.com" target="_blank">Google Scholar</a></li>
+                    <li><a href="https://orcid.org" target="_blank">ORCID Profile</a></li>
+                    <li><a href="https://www.researchgate.net" target="_blank">ResearchGate</a></li>
+                    <li><a href="https://arxiv.org" target="_blank">arXiv Papers</a></li>
+                    <li><a href="https://dblp.org" target="_blank">DBLP Bibliography</a></li>
+                </ul>
+                
+                <h3>Social & Professional</h3>
+                <ul class="links-list">
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter/X - @janedoe_ai</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                </ul>
+                
+                <h3>Affiliations</h3>
+                <ul class="links-list">
+                    <li><a href="#" target="_blank">University Name - Computer Science Department</a></li>
+                    <li><a href="#" target="_blank">AI Research Lab</a></li>
+                    <li><a href="#" target="_blank">Machine Learning Group</a></li>
+                </ul>
+                
+                <h3>Resources & Tools</h3>
+                <ul class="links-list">
+                    <li><a href="https://paperswithcode.com" target="_blank">Papers with Code</a></li>
+                    <li><a href="https://huggingface.co" target="_blank">Hugging Face</a></li>
+                    <li><a href="https://pytorch.org" target="_blank">PyTorch</a></li>
+                    <li><a href="https://www.tensorflow.org" target="_blank">TensorFlow</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Jane Doe. All rights reserved. | Last updated: October 2024</p>
+        </footer>
+    </div>
+
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links and pages
+                navLinks.forEach(l => l.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding page
+                const targetId = link.getAttribute('href').substring(1);
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+                
+                // Smooth scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Add hover effect to gallery items
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                alert('In a real implementation, this would open a full-size image viewer.');
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.research-item, .education-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
