@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane Doe - PhD Researcher</title>
+    <title>Kaya Harper - PhD Candidate</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('assetts/photos/IMG_2141.jpg') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
         }
 
@@ -131,18 +132,19 @@
             align-items: start;
         }
 
-        .profile-image {
+       .profile-image {
             width: 250px;
             height: 250px;
             border-radius: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-image:hover {
@@ -302,14 +304,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Jane Doe</h1>
-            <p>PhD Researcher | Evolutionary Biology | Cave Fish Evolution</p>
+            <h1>Kaya Harper</h1>
+            <p>PhD Candidate | Evolutionary Genomics | Epigenetics | Ecology</p>
         </header>
 
         <nav>
             <ul>
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#about" class="nav-link">Skills</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#education" class="nav-link">Education & Experience</a></li>
                 <li><a href="#pictures" class="nav-link">Pictures</a></li>
@@ -321,16 +323,24 @@
             <!-- Home Page -->
             <div id="home" class="page active">
                 <div class="profile-section">
-                    <div class="profile-image">JD</div>
+                    <div class="profile-image"><img src="assetts/photos/IMG_1160.jpg" class="img-fluid" alt=""></div>
                     <div>
-                        <h2>Welcome</h2>
-                        <p>I am a PhD researcher in Evolutionary Biology at University Name, specializing in the evolution and adaptation of <em>Astyanax mexicanus</em> (Mexican cavefish). My research focuses on understanding the genetic and developmental mechanisms underlying trait evolution in cave-adapted populations, including eye degeneration, pigmentation loss, and enhanced sensory systems.</p>
+                        <h2>Research</h2>
+                        <p>My research integrates evolutionary genomics, epigenetics, and ecology to understand how environmental variation shapes adaptation across species and timescales. I’m particularly interested in how environmental flux influences the evolution of genomes, epigenetics, and phenotypic plasticity, and how these processes contribute to resilience or vulnerability under climate change.
+                        <br><br>I approach these questions using comparative genomics, next generation sequencing technology, behavioral assays, and fieldwork in both aquatic and terrestrial systems.
+</p>
+
+                        <h2>Interests</h2>
+                        <p>Genomics · Epigenetics · Population Genetics · Bioinformatics · Evolutionary Biology · Environmental Adaptation · Comparative Genomics · Conservation Genomics · Phylogenetics </p>
+
+                        <h2>Current projects:</h2>
+                        <p>Astyanax Epigenetics: Exploring how ecological conditions shape patterns of DNA methylation across cave and surface populations.
+                        <br><br>Transcriptional Plasticity in a Changing Environment: Investigating how environmental conditions influence gene expression responses and the evolution of plasticity in Astyanax mexicanus.
+                        <br><br>Genomes and Gene Flow: Studying how environmental gradients and landscape structure affect population connectivity across Bombus species. </p>
                         
                         <div class="contact-info">
-                            <p><strong>Email:</strong> jane.doe@university.edu</p>
-                            <p><strong>Office:</strong> Room 312, Biology Building</p>
-                            <p><strong>Lab:</strong> Cave Biology Research Laboratory</p>
-                            <p><strong>ORCID:</strong> 0000-0000-0000-0000</p>
+                            <p><strong>Email:</strong> <a href="mailto:kayaharper@tamu.edu">kayaharper@tamu.edu</a></p>
+                            <p><strong>University:</strong> Texas A&amp;M University, College Station</p>
                         </div>
                     </div>
                 </div>
@@ -338,140 +348,95 @@
 
             <!-- About Page -->
             <div id="about" class="page">
-                <h2>About Me</h2>
-                <p>I am a passionate evolutionary biologist dedicated to understanding the mechanisms of adaptation and evolution in extreme environments. My primary research organism is <em>Astyanax mexicanus</em>, a remarkable species that exists as both surface-dwelling and cave-adapted populations, providing a unique natural experiment in evolution.</p>
-                
-                <h3>Research Interests</h3>
-                <ul>
-                    <li>Cave adaptation and regressive evolution</li>
-                    <li>Developmental biology of eye and pigmentation loss</li>
-                    <li>Sensory system evolution and enhancement</li>
-                    <li>Behavioral evolution in cave environments</li>
-                    <li>Population genetics and phylogeography of cavefish</li>
-                    <li>Metabolic adaptations to nutrient-poor environments</li>
-                    <li>Circadian rhythm evolution in perpetual darkness</li>
-                </ul>
-                
-                <h3>Academic Background</h3>
-                <p>I completed my Bachelor's degree in Biology at State University (2018) with a focus on molecular biology and genetics. My Master's degree in Evolutionary Biology at Research University (2020) examined morphological variation in <em>Astyanax</em> populations. Currently, I am pursuing my PhD under the supervision of Prof. Distinguished Biologist, investigating the genetic basis of convergent evolution in multiple cave populations of <em>Astyanax mexicanus</em>.</p>
-                
-                <h3>Teaching</h3>
-                <p>I am passionate about teaching evolution and have served as a teaching assistant for several courses including:</p>
-                <ul>
-                    <li>Evolutionary Biology (Fall 2023)</li>
-                    <li>Genetics Laboratory (Spring 2023)</li>
-                    <li>Introduction to Biology (Fall 2022)</li>
-                    <li>Comparative Vertebrate Anatomy (Spring 2022)</li>
-                </ul>
-                
+                <h2>Skills</h2>
+
+                <h3>Genetics &amp; Genomics</h3>
+                <div class="research-item">
+                    <p>Evolutionary Biology (Genome structure evolution, Mammalian Sex Chromosome evolution), MethylSeq (Bismark, bowtie2, samtools, Methylkit), RNASeq (FastQC, DESeq2), Primer optimization, Isothermal assembly, DNA/RNA extraction, PCR, qPCR, Gel electrophoresis &amp; imaging, Flow Cytometry, Tetrad sporulation, CRISPR/Cas9 Gene editing, Dissection microscopy, Cell and tissue culture growth &amp; passaging</p>
+                </div>
+
                 <h3>Field Work</h3>
-                <p>Regular field expeditions to cave systems in Northeast Mexico, including:</p>
-                <ul>
-                    <li>Cueva de El Pachón, Tamaulipas</li>
-                    <li>Cueva Chica, San Luis Potosí</li>
-                    <li>Cueva de Los Sabinos, San Luis Potosí</li>
-                    <li>Sistema de la Tinaja, San Luis Potosí</li>
-                </ul>
+                <div class="research-item">
+                    <p>Field Research Planning, Marine &amp; Freshwater Field Sampling Techniques, Scuba Diving, Environmental Data Collection, Data Management, Permitting and Compliance, Equipment Maintenance, Field Safety, Species Identification, Wilderness First Aid</p>
+                </div>
+
+                <h3>Data Science</h3>
+                <div class="research-item">
+                    <p>Large dataset management (&gt;20 TB), Bayesian statistics, Phylogenetics, Data Visualization, High-Performance Cluster (HPC) Computing</p>
+                </div>
+
+                <h3>Programming</h3>
+                <div class="research-item">
+                    <p>RStudio · Linux · MatLab</p>
+                </div>
+
+                <h3>Soft Skills</h3>
+                <div class="research-item">
+                    <p>Public outreach, Science communication, Lesson planning, Academic planning, Team Coordination, Leadership, Time Management, Public Speaking, Strategic Planning, Project Management, Graphic Design</p>
+                </div>
             </div>
 
             <!-- Research Page -->
             <div id="research" class="page">
                 <h2>Research</h2>
-                
-                <h3>Current Projects</h3>
-                <div class="research-item">
-                    <h4>Convergent Evolution in Multiple Cave Populations of <em>Astyanax mexicanus</em></h4>
-                    <p>Investigating the genetic basis of repeated trait loss across independently evolved cave populations. Using whole-genome sequencing and QTL mapping to identify whether the same genes underlie convergent phenotypes in different caves.</p>
-                    <p><strong>Funding:</strong> National Science Foundation DEB Grant #123456</p>
-                    <p><strong>Collaborators:</strong> Cave Biology Consortium, UNAM Mexico</p>
-                </div>
-                
-                <div class="research-item">
-                    <h4>Sensory System Compensation in Blind Cavefish</h4>
-                    <p>Examining how enhanced lateral line system and taste buds compensate for vision loss. Using behavioral assays, neuroanatomy, and transcriptomics to understand sensory system trade-offs.</p>
-                    <p><strong>Status:</strong> Manuscript in preparation for <em>Current Biology</em></p>
-                </div>
-                
-                <div class="research-item">
-                    <h4>Metabolic Adaptations to Nutrient-Poor Cave Environments</h4>
-                    <p>Studying how cavefish have evolved altered metabolism, including increased fat storage and starvation resistance. Comparing metabolic rates and gene expression between surface and cave populations.</p>
-                    <p><strong>Funding:</strong> NIH R01 Grant (Co-Investigator)</p>
-                </div>
-                
+
                 <h3>Publications</h3>
                 <div class="research-item">
-                    <h4>2024</h4>
-                    <p><strong>Doe, J.</strong>, Smith, A., Johnson, B. (2024). "Parallel evolution of eye loss in <em>Astyanax mexicanus</em>: Evidence for regulatory gene convergence." <em>Evolution</em>, 78(5), 892-907.</p>
-                    <p>Garcia, M., <strong>Doe, J.</strong>, Biologist, D. (2024). "Enhanced chemoreception compensates for vision loss in cave-adapted fish." <em>Proceedings of the Royal Society B</em>, 291, 20240156.</p>
+                    <p>Maximos Chin, Matthew Marano, Kenzie G. Laird, <strong>Kaya Harper</strong>, Michelle M. Jonika, Heath Blackmon. <em>Fusions of Autosomes with Sex Chromosomes are Disfavored in Mammals.</em> PLoS Biology, <strong>2025</strong>.</p>
                 </div>
-                
+
+                <h3>Presentations</h3>
                 <div class="research-item">
-                    <h4>2023</h4>
-                    <p><strong>Doe, J.</strong>, Scholar, E. (2023). "Population genomics reveals multiple invasions of cave habitats by <em>Astyanax mexicanus</em>." <em>Molecular Ecology</em>, 32(14), 3821-3836.</p>
-                    <p>Johnson, B., <strong>Doe, J.</strong>, et al. (2023). "Circadian rhythm degradation in perpetual darkness: Molecular mechanisms in cavefish." <em>Journal of Experimental Biology</em>, 226(8), jeb245158.</p>
+                    <h4>2025</h4>
+                    <p><strong>Cavefish and Starvation: The Epigenetic Puzzle of <em>Astyanax mexicanus</em></strong> — Student/Postdoc Research Conference, Texas A&amp;M University <em>(Poster)</em></p>
                 </div>
-                
+
                 <div class="research-item">
                     <h4>2022</h4>
-                    <p><strong>Doe, J.</strong>, et al. (2022). "Developmental timing of eye degeneration in <em>Astyanax</em> cavefish." <em>Developmental Biology</em>, 485, 67-79.</p>
-                    <p>Rodriguez, S., <strong>Doe, J.</strong>, Biologist, D. (2022). "Behavioral adaptations to cave life: A comparative study of six <em>Astyanax</em> populations." <em>Behavioral Ecology</em>, 33(4), 812-825.</p>
+                    <p><strong>Creating a Food Carbon Emission Footprint for Lehigh University Dining Services</strong> — Sustainability Symposium, Bucknell University <em>(Talk)</em></p>
+                    <p style="margin-top:10px"><strong>Studying the efficacy of CRISPR/Cas9 with homologous genes from <em>S. paradoxus</em> and <em>S. cerevisiae</em></strong> — Department of Biology Student Research Week, Lehigh University <em>(Poster)</em></p>
+                    <p style="margin-top:10px"><strong>Elucidating Mycobacteriophage Taptic Gene Functions with the SEA-GENES Research Project at Lehigh University</strong> — SEA-PHAGES Symposium, Howard Hughes Medical Institute <em>(Poster)</em></p>
                 </div>
-                
-                <h3>Conference Presentations</h3>
+
                 <div class="research-item">
-                    <p>• <strong>Doe, J.</strong> (2024). "Genomic basis of convergent evolution in cavefish." Oral presentation, Evolution Conference, Montreal, Canada.</p>
-                    <p>• <strong>Doe, J.</strong> (2023). "Sensory system trade-offs in blind cavefish." Poster, Society for Integrative and Comparative Biology, Austin, TX.</p>
-                    <p>• <strong>Doe, J.</strong> (2023). "Metabolic evolution in nutrient-poor environments." Invited talk, International Astyanax Meeting, San Luis Potosí, Mexico.</p>
+                    <h4>2021</h4>
+                    <p><strong>Understanding tetrad sporulation dynamics in <em>S. paradoxus</em> and <em>S. cerevisiae</em></strong> — Department of Biology Student Research Week, Lehigh University <em>(Poster)</em></p>
                 </div>
             </div>
 
             <!-- Education & Experience Page -->
             <div id="education" class="page">
-                <h2>Education & Experience</h2>
+                <h2>Education &amp; Experience</h2>
                 
                 <h3>Education</h3>
                 <div class="education-item">
-                    <h4>PhD in Computer Science</h4>
-                    <p><strong>University Name</strong> | 2021 - Present</p>
-                    <p>Advisor: Prof. Distinguished Scholar</p>
-                    <p>Thesis: "Interpretable Deep Learning Models for Healthcare Applications"</p>
-                    <p>GPA: 4.0/4.0</p>
+                    <h4>Doctor of Philosophy in Biology</h4>
+                    <p><strong>Texas A&amp;M University, United States</strong> | 2023 – Present</p>
                 </div>
                 
                 <div class="education-item">
-                    <h4>M.S. in Artificial Intelligence</h4>
-                    <p><strong>Research Institute</strong> | 2019 - 2020</p>
-                    <p>Thesis: "Efficient Attention Mechanisms for Vision Transformers"</p>
-                    <p>GPA: 3.95/4.0</p>
+                    <h4>Honors B.S. in Molecular Biology (Magna Cum Laude)</h4>
+                    <p><strong>Lehigh University, United States</strong> | 2018 – 2022</p>
+                    <p>Minor in Earth and Environmental Sciences</p>
                 </div>
                 
-                <div class="education-item">
-                    <h4>B.S. in Computer Science</h4>
-                    <p><strong>Tech University</strong> | 2015 - 2018</p>
-                    <p>Summa Cum Laude, Phi Beta Kappa</p>
-                    <p>GPA: 3.92/4.0</p>
-                </div>
-                
-                <h3>Professional Experience</h3>
-                <div class="education-item">
-                    <h4>Research Intern</h4>
-                    <p><strong>Big Tech AI Research Lab</strong> | Summer 2023</p>
-                    <p>Worked on large-scale vision-language models for multimodal understanding. Developed novel training strategies that improved model performance by 15% on benchmark datasets.</p>
-                </div>
-                
-                <div class="education-item">
-                    <h4>Machine Learning Engineer Intern</h4>
-                    <p><strong>Healthcare Startup Inc.</strong> | Summer 2022</p>
-                    <p>Implemented deep learning pipelines for medical image analysis. Deployed models serving 10,000+ daily predictions with 99.9% uptime.</p>
-                </div>
-                
-                <h3>Awards & Honors</h3>
+                <h3>Honors &amp; Awards</h3>
                 <div class="education-item">
                     <ul>
-                        <li>Best Paper Award, Medical Imaging Conference 2024</li>
-                        <li>Google PhD Fellowship in Machine Learning, 2023</li>
-                        <li>Outstanding Graduate Student Award, 2023</li>
-                        <li>Dean's List, All Semesters (Undergraduate)</li>
+                        <li>First Year Biology Department Scholarship – Texas A&amp;M University</li>
+                        <li>Michael E. Family Undergraduate Scholar Award – Lehigh University</li>
+                        <li>Biology Department Honors – Lehigh University</li>
+                        <li>Dean's List Recipient – Lehigh University</li>
+                        <li>Magna Cum Laude – Lehigh University</li>
+                    </ul>
+                </div>
+
+                <h3>Certifications</h3>
+                <div class="education-item">
+                    <ul>
+                        <li>NOLS Wilderness First Aid Certified</li>
+                        <li>PADI Open Water Certified</li>
+                        <li>CPR / Epinephrine Administration</li>
                     </ul>
                 </div>
             </div>
@@ -501,96 +466,81 @@
             <div id="links" class="page">
                 <h2>Links</h2>
                 
-                <h3>Academic Profiles</h3>
-                <ul class="links-list">
-                    <li><a href="https://scholar.google.com" target="_blank">Google Scholar</a></li>
-                    <li><a href="https://orcid.org" target="_blank">ORCID Profile</a></li>
-                    <li><a href="https://www.researchgate.net" target="_blank">ResearchGate</a></li>
-                    <li><a href="https://arxiv.org" target="_blank">arXiv Papers</a></li>
-                    <li><a href="https://dblp.org" target="_blank">DBLP Bibliography</a></li>
-                </ul>
-                
                 <h3>Social & Professional</h3>
                 <ul class="links-list">
-                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://twitter.com" target="_blank">Twitter/X - @janedoe_ai</a></li>
-                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/kaya-harper-a69458183/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://bsky.app/profile/kayaharper.bsky.social" target="_blank">BlueSky</a></li>
+                    <li><a href="https://github.com/KayaHarper?tab=overview&from=2025-10-01&to=2025-10-09" target="_blank">GitHub</a></li>
+                    <li><a href="https://scholar.google.com/citations?hl=en&user=StSZmZUAAAAJ" target="_blank">Google Scholar</a></li>
                 </ul>
-                
+
                 <h3>Affiliations</h3>
                 <ul class="links-list">
-                    <li><a href="#" target="_blank">University Name - Computer Science Department</a></li>
-                    <li><a href="#" target="_blank">AI Research Lab</a></li>
-                    <li><a href="#" target="_blank">Machine Learning Group</a></li>
-                </ul>
-                
-                <h3>Resources & Tools</h3>
-                <ul class="links-list">
-                    <li><a href="https://paperswithcode.com" target="_blank">Papers with Code</a></li>
-                    <li><a href="https://huggingface.co" target="_blank">Hugging Face</a></li>
-                    <li><a href="https://pytorch.org" target="_blank">PyTorch</a></li>
-                    <li><a href="https://www.tensorflow.org" target="_blank">TensorFlow</a></li>
+                    <li><a href="https://artsci.tamu.edu/biology/academics/graduate/biology-phd.html" target="_blank">Texas A&amp;M University - Evolutionary Biology Department</a></li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2024 Jane Doe. All rights reserved. | Last updated: October 2024</p>
+            <p>&copy; 2024 Kaya Harper. All rights reserved. | Last updated: October 2024</p>
         </footer>
     </div>
 
-    <script>
-        // Navigation functionality
-        const navLinks = document.querySelectorAll('.nav-link');
-        const pages = document.querySelectorAll('.page');
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation functionality
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Remove active class from all links and pages
-                navLinks.forEach(l => l.classList.remove('active'));
-                pages.forEach(p => p.classList.remove('active'));
-                
-                // Add active class to clicked link
-                link.classList.add('active');
-                
-                // Show corresponding page
-                const targetId = link.getAttribute('href').substring(1);
-                const targetPage = document.getElementById(targetId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                }
-                
-                // Smooth scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Remove active class from all links and pages
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    pages.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked link
+                    this.classList.add('active');
+
+                    // Show corresponding page
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetPage = document.getElementById(targetId);
+                    if (targetPage) {
+                        targetPage.classList.add('active');
+                    }
+
+                    // Smooth scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             });
-        });
 
-        // Add hover effect to gallery items
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                alert('In a real implementation, this would open a full-size image viewer.');
+            // Add hover effect to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    alert('In a real implementation, this would open a full-size image viewer.');
+                });
             });
-        });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // Add animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.research-item, .education-item').forEach(el => {
+                observer.observe(el);
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.research-item, .education-item').forEach(item => {
-            observer.observe(item);
         });
     </script>
 </body>
